@@ -1,0 +1,65 @@
+create table user(
+id int primary key auto_increment not null,
+name varchar(55) not null,
+surname varchar(55) not null,
+role_id int
+);
+create table role(
+id int primary key auto_increment not null,
+role_name varchar(55) not null
+);
+
+create table aircompany(
+id int primary key not null auto_increment,
+companyName varchar(55) not null
+);
+
+create table airplane(
+id int primary key not null auto_increment,
+airplaneName varchar(55) not null,
+airplaneModel varchar(55) not null,
+boardNumber varchar(55) not null,
+aircompany_id int not null
+);
+
+create table route(
+id int primary key not null auto_increment,
+departureTime timestamp not null,
+arrivalTime timestamp not null,
+departureCity_id int not null,
+arrivalCity_id int not null,
+airplane_id int not null
+);
+
+
+create table city(
+id int primary key not null auto_increment,
+country_id int not null,
+cityName varchar(55) not null
+
+);
+
+create table country (
+id int primary key not null auto_increment,
+countryName varchar(55) not null
+);
+
+create table login(
+id int primary key not null auto_increment,
+login varchar(55) not null unique,
+password varchar(55) not null,
+user_id int not null
+);
+
+create table passport(
+id int primary key not null auto_increment,
+validity timestamp,
+passNumber varchar(55) not null unique,
+user_id int not null
+);
+
+create table ticket(
+id int primary key not null auto_increment,
+route_id int not null,
+passport_id int not null
+)
