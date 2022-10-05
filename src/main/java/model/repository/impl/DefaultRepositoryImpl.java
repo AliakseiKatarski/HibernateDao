@@ -44,4 +44,10 @@ public class DefaultRepositoryImpl<T> implements DefaultRepository<T> {
         return session.get(T,id);
     }
 
+    @Override
+    public List<T> findAll() {
+        return null;
+    }
+
+
 }

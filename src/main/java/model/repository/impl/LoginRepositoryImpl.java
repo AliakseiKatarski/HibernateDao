@@ -6,7 +6,7 @@ import model.repository.LoginRepository;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import java.util.List;
+
 
 public class LoginRepositoryImpl extends DefaultRepositoryImpl<Login> implements LoginRepository {
 
@@ -18,10 +18,4 @@ public class LoginRepositoryImpl extends DefaultRepositoryImpl<Login> implements
         return (Login) loginQuery.getSingleResult();
     }
 
-    @Override
-    public List<Login> findAll() {
-        Session session=DataSource.getInstance().getSession();
-        Query findAllLogins=session.createQuery("from Login");
-        return findAllLogins.getResultList();
-    }
 }

@@ -8,12 +8,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class AirplaneRepositoryImpl extends DefaultRepositoryImpl<Airplane> implements AirplaneRepository {
-    @Override
-    public List<Airplane> findAll() {
-        Session session= DataSource.getInstance().getSession();
-        Query findAllAirplanes=session.createQuery("from Airplane");
-        return findAllAirplanes.getResultList();
-    }
 
     @Override
     public Airplane findByBoardNumber(String boardNumber) {

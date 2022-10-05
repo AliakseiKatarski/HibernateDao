@@ -10,12 +10,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class AircompanyRepositoryImpl extends DefaultRepositoryImpl<Aircompany> implements AircompanyRepository {
-    @Override
-    public List<Aircompany> findAll() {
-        Session session= DataSource.getInstance().getSession();
-        Query findAllCompaniesQuery=session.createQuery("from Aircompany");
-        return findAllCompaniesQuery.getResultList();
-    }
 
     @Override
     public Aircompany findByName(String name) {
