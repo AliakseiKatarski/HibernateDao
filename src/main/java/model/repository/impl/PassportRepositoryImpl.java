@@ -11,11 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class PassportRepositoryImpl extends DefaultRepositoryImpl<Passport> implements PassportRepository {
-    @Override
-    public Passport findById(Integer id) {
-        Session session= DataSource.getInstance().getSession();
-        return session.get(Passport.class,id);
-    }
 
     @Override
     public Passport findByPassportNumber(String passNum) {

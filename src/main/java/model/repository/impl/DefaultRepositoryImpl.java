@@ -5,8 +5,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import hibernateUtils.DataSource;
-import javax.persistence.EntityManager;
+import org.hibernate.query.Query;
 
+import javax.persistence.EntityManager;
+import java.util.List;
 
 
 public class DefaultRepositoryImpl<T> implements DefaultRepository<T> {
@@ -36,4 +38,10 @@ public class DefaultRepositoryImpl<T> implements DefaultRepository<T> {
             e.printStackTrace();
         }
     }
+
+    public T findById(Integer id, Class<? extends T> T) {
+        Session session=DataSource.getInstance().getSession();
+        return session.get(T,id);
+    }
+
 }

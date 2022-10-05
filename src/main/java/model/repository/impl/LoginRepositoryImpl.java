@@ -9,11 +9,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class LoginRepositoryImpl extends DefaultRepositoryImpl<Login> implements LoginRepository {
-    @Override
-    public Login findById(Integer id) {
-        Session session= DataSource.getInstance().getSession();
-        return session.get(Login.class,id);
-    }
 
     @Override
     public Login findByLogin(String login) {

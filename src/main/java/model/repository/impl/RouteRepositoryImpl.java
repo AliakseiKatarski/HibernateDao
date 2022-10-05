@@ -17,9 +17,4 @@ public class RouteRepositoryImpl extends DefaultRepositoryImpl<Route> implements
         return findAllRoutes.getResultList();
     }
 
-    @Override
-    public Route findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(Route.class,id);
-    }
 }

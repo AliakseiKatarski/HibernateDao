@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface TicketRepository extends DefaultRepository<Ticket>{
     List<Ticket> findAll();
-    Ticket findById(Integer id);
+
 }

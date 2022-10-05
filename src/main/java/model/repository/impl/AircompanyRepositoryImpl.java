@@ -18,12 +18,6 @@ public class AircompanyRepositoryImpl extends DefaultRepositoryImpl<Aircompany> 
     }
 
     @Override
-    public Aircompany findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(Aircompany.class,id);
-    }
-
-    @Override
     public Aircompany findByName(String name) {
         Session session=DataSource.getInstance().getSession();
         Query findByCompanyByName=session.createQuery("from Aircompany where companyName=?1");

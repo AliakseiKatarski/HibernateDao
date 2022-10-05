@@ -16,10 +16,4 @@ public class TicketRepositoryImpl extends DefaultRepositoryImpl<Ticket> implemen
             Query findAllTickets = session.createQuery("from Ticket");
         return findAllTickets.getResultList();
         }
-
-    @Override
-    public Ticket findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(Ticket.class,id);
-    }
 }

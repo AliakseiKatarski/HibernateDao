@@ -16,12 +16,6 @@ public class AirplaneRepositoryImpl extends DefaultRepositoryImpl<Airplane> impl
     }
 
     @Override
-    public Airplane findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(Airplane.class,id);
-    }
-
-    @Override
     public Airplane findByBoardNumber(String boardNumber) {
         Session session=DataSource.getInstance().getSession();
         Query findBoardNumber=session.createQuery("from Airplane where boardNumber=?1");

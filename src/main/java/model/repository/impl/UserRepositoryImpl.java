@@ -17,10 +17,4 @@ public class UserRepositoryImpl extends DefaultRepositoryImpl<User> implements U
         return findAllUsers.getResultList();
     }
 
-    @Override
-    public User findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(User.class,id);
-    }
-
 }

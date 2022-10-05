@@ -16,9 +16,4 @@ public class RoleRepositoryImpl extends DefaultRepositoryImpl<Role> implements R
         return findAllRoles.getResultList();
     }
 
-    @Override
-    public Role findById(Integer id) {
-        Session session=DataSource.getInstance().getSession();
-        return session.get(Role.class,id);
-    }
 }
