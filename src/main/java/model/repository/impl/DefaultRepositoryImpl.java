@@ -5,6 +5,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import hibernateUtils.DataSource;
+import org.hibernate.mapping.PersistentClass;
 import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
@@ -45,8 +46,10 @@ public class DefaultRepositoryImpl<T> implements DefaultRepository<T> {
     }
 
     @Override
-    public List<T> findAll() {
-        return null;
+    public List<T> findAll(Class<? extends T> T) {
+        Session session=DataSource.getInstance().getSession();
+        Query findAll=session.createQuery("from" + T.getSimpleName());
+        return findAll.getResultList();
     }
 
 
